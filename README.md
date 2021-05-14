@@ -91,12 +91,12 @@ The AWS machine image has a few additional features which include:
   | `VM_SUBNET_ID` | The ID of the subnet within the VPC to which the primary (eth0) interface is attached |
   | `VM_ZONE` | The AWS availability zone in which the instance is deployed |
   | `VM_REGION` | The AWS region in which the instance is deployed |
-  | `VM_NAME` | The value of the `iac.impervaunity.io/name` tag, if set |
-  | `VM_HOSTNAME` | The value of the `iac.impervaunity.io/hostname` tag, if set; defaults to the output of the `hostname -s` command |
-  | `VM_DNS_SUFFIX` | The value of the `iac.impervaunity.io/dns-suffix` tag, if set; defaults to the output of the `hostname -d` command |
+  | `VM_NAME` | The value of the `aws.impervaunity.io/name` tag, if set |
+  | `VM_HOSTNAME` | The value of the `aws.impervaunity.io/hostname` tag, if set; defaults to the output of the `hostname -s` command |
+  | `VM_DNS_SUFFIX` | The value of the `aws.impervaunity.io/dns-suffix` tag, if set; defaults to the output of the `hostname -d` command |
   | `VM_FQDN` | The fully qualified domain name of the host created by joining `VM_HOSTNAME` and `VM_DNS_SUFFIX` with a period (.); if `VM_DNS_SUFFIX` is not set or empty, it will simply be the value of `VM_HOSTNAME` |
-  | `VM_RESOURCE_GROUP` | The value of the `iac.impervaunity.io/resource-group` tag, if set |
-  | `VM_VPC_NAME` | The value of the VPC's `iac.impervaunity.io/name` tag, if set |
+  | `VM_RESOURCE_GROUP` | The value of the `aws.impervaunity.io/resource-group` tag, if set |
+  | `VM_VPC_NAME` | The value of the VPC's `aws.impervaunity.io/name` tag, if set |
 
 
 ## ☑️ Build Requirements
