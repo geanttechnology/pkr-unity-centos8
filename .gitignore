@@ -1,0 +1,3 @@
+build/package/upload/*
+!build/package/upload/.gitkeep
+packer_cache

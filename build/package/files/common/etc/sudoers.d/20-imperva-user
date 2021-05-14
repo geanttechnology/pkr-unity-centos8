@@ -1,0 +1,2 @@
+# User rules for imperva
+imperva ALL=(ALL) NOPASSWD:ALL
