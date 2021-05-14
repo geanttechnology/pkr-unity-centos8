@@ -1,7 +1,7 @@
 <div align="center">
   <img width="128" src="./logo.svg" alt="errors logo" />
   <h1>Imperva Unity CentOS 8 Image</h1>
-  <p>Packer template for creating the customize CentOS 8 image for Imperva Unity</p>
+  <p>Packer template for creating the customized CentOS 8 image for Imperva Unity</p>
   <hr />
   <br />
   <a href="#">
