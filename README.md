@@ -29,6 +29,7 @@
   - [Amazon Web Services AMI](#amazon-web-services-ami)
 - [☑️ Build Requirements](#️-build-requirements)
   - [Amazon Web Services](#amazon-web-services)
+    - [IAM Permissions](#iam-permissions)
 - [⛏️ Build Process](#️-build-process)
 - [➡️ Inputs](#️-inputs)
 - [📃 License](#-license)
@@ -113,6 +114,58 @@ The AWS machine image has a few additional features which include:
 - If you do not use the default profile for the AWS client, be sure to set the `AWS_PROFILE` environment variable to the name of the profile that should be used.
 - Verify that the user/role authenticating to the AWS account has the appropriate permissions to be able to complete the build. (see **IAM Task or Instance Role** on <https://www.packer.io/docs/builders/amazon>).
 - You **must** have a VPC deployed using the [Terraform AWS Unity VPC](https://github.com/imperva-marketing/tf-unity-aws-vpc) module.
+
+#### IAM Permissions
+
+The following policy provides the minimal set of permissions necessary to build this image:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AttachVolume",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CopyImage",
+        "ec2:CreateImage",
+        "ec2:CreateKeypair",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateSnapshot",
+        "ec2:CreateTags",
+        "ec2:CreateVolume",
+        "ec2:DeleteKeyPair",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteSnapshot",
+        "ec2:DeleteVolume",
+        "ec2:DeregisterImage",
+        "ec2:DescribeImageAttribute",
+        "ec2:DescribeImages",
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceStatus",
+        "ec2:DescribeRegions",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVpcs",
+        "ec2:DetachVolume",
+        "ec2:GetPasswordData",
+        "ec2:ModifyImageAttribute",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifySnapshotAttribute",
+        "ec2:RegisterImage",
+        "ec2:RunInstances",
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
 
 ## ⛏️ Build Process
 
